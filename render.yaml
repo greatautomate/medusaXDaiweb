@@ -53,6 +53,14 @@ services:
       - key: CRYPTO_SECRET
         generateValue: true
 
+  # Redis Cache Service
+  - type: redis
+    name: medusaxd-redis
+    plan: free  # Free tier: 25MB RAM, 50 connections, ephemeral storage
+    # For production, consider: starter ($10/month, 256MB, persistent)
+    region: oregon
+    maxmemoryPolicy: allkeys-lru
+
 databases:
   # PostgreSQL Database (Updated 2025 Plans)
   - name: medusaxd-postgres
@@ -63,9 +71,3 @@ databases:
     region: oregon
     postgresMajorVersion: "15"
     # Note: Paid plans include point-in-time recovery and flexible storage scaling
-
-  # Redis Cache (Key Value Store)
-  - name: medusaxd-redis
-    plan: free  # Free tier: 25MB RAM, 50 connections, ephemeral storage
-    # For production, consider: starter ($10/month, 256MB, persistent)
-    region: oregon
