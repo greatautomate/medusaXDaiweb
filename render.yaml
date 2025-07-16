@@ -64,9 +64,8 @@ databases:
     postgresMajorVersion: "15"
     # Note: Paid plans include point-in-time recovery and flexible storage scaling
 
-  # Redis Cache (Key Value)
+  # Redis Cache (Key Value Store)
   - name: medusaxd-redis
     plan: free  # Free tier: 25MB RAM, 50 connections, ephemeral storage
     # For production, consider: starter ($10/month, 256MB, persistent)
     region: oregon
-    maxmemoryPolicy: allkeys-lru
