@@ -60,6 +60,7 @@ services:
     # For production, consider: starter ($10/month, 256MB, persistent)
     region: oregon
     maxmemoryPolicy: allkeys-lru
+    ipAllowList: []  # Empty list allows access from all Render services
 
 databases:
   # PostgreSQL Database (Updated 2025 Plans)
